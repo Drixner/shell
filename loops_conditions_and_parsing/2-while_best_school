@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#lista best school
+while [ $COUNTER -lt 10 ]; do
+	      echo "Best School"
+	            let COUNTER=COUNTER+1
+		    done
