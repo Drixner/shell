@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#lista best school until
+LIST="$(ls)"
+for i in $LIST
+do
+	echo "$i" | cut -d "-" -f2
+done 
