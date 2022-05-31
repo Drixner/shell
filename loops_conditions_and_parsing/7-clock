@@ -1,13 +1,15 @@
 #!/usr/bin/env bash
-#doble while
-HOUR=0
-MINUTE=1
-while [ $HOUR -le 12 ]; do
-	echo "Hour: $HOUR"
-	while [ $MINUTE -lt 59 ]; do
-		echo $MINUTE
-		((MINUTE+=1))
+#doble 
+hour=0
+minute=1
+while [ "$hour" -le 12 ]
+do
+	echo "Hour: $hour"
+	((hour++))
+	minute=1
+	while [ "$minute" -le 59 ]
+	do
+		echo $minute
+		((minute++))
 	done
-	((MINUTE=0))
-	((HOUR+=1))
 done
