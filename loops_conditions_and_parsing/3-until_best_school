@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#lista best school until
+COUNTER=0
+until [  $COUNTER = 10 ]; do
+	 echo Best School
+	((COUNTER++))
+done
