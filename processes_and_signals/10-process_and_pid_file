@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#You cannot use ps
+echo $! > /var/run/myscript.pid
+
+while :
+do
+	echo "To infinity and beyond"
+trap "echo I hate the kill command" 15
+trap "Y U no love me?!" 2
+sudo rm /var/run/myscript.pid
+done
