@@ -2,9 +2,10 @@
 #You cannot use ps
 while :
 do
-echo $$ > /var/run/myscript.pid
+echo "$$" > /var/run/myscript.pid
 echo "To infinity and beyond"
 trap "echo I hate the kill command" 15
 trap "Y U no love me?!" 2
 trap "exit" 3
+rm /var/run/myscript.pid
 done
