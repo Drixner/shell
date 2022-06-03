@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+#Manage my process
+init (){
+    ./manage_my_process & echo $! > /var/run/my_process.pid
+}
+
+finish (){
+    kill "$(ps -aux | pgrep -f manage_my_process)" & rm /var/run/my_process.pid
+}
+
+case "$1" in
+   start) init; echo "manage_my_process started";;
+   stop)  finish; echo "manage_my_process stopped";;
+   restart) finish; init; echo "manage_my_process restarted";;
+   *) echo "Usage: manage_my_process {start|stop|restart}";;
+esac
