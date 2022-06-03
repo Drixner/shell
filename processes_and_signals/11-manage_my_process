@@ -2,10 +2,11 @@
 #Manage my process
 init (){
     ./manage_my_process & echo $! > /var/run/my_process.pid
+    
 }
 
 finish (){
-    kill "$(ps -aux | pgrep -f manage_my_process)" & rm /var/run/my_process.pid
+    pkill -f "manage_my_process" & rm /var/run/my_process.pid
 }
 
 case "$1" in
